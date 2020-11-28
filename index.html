@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   	  <link rel="preconnect" href="https://fonts.gstatic.com">
+	  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+      <title>Dog's Age</title>
+      <script type="text/javascript">
+
+         function calAge()
+         {
+
+         	var n = document.getElementById("nameInpt").value;
+         	var a = document.getElementById("ageInpt").value;
+         	if(a>=21)
+         	{
+         	 var res= a - 21;
+         	 var lef =  2 + (res / 4);
+         	 var intPart = parseInt(lef);
+         	 var floatPart=lef-intPart;
+         	 var mnths = Math.ceil(floatPart*12); /*TO PRINT MONTHS*/
+         	}
+         	else{
+         		 lef = a/10.5;
+         		 var intPart = parseInt(lef); //Taking int part of lef
+         		 var floatPart=lef-intPart;
+         		 var mnths = Math.ceil(floatPart*12); /*TO PRINT MONTHS*/
+         	}
+         	document.getElementById("res").style.visibility = "visible"; 
+         	document.getElementById("para1").style.visibility = "visible"; 
+         	document.getElementById("para1").innerHTML = "Well Mr/Miss: "+ n+" is expected to live as a dog for:";
+         	document.getElementById("res").innerHTML = intPart+" years & " +mnths+" months";
+         	
+         }
+         function resetBtn()
+         {
+         	document.getElementById("ageInpt").value='';
+         	document.getElementById("nameInpt").value='';
+         	document.getElementById("res").style.visibility = "hidden"; 
+         	document.getElementById("para1").style.visibility = "hidden"; 
+         }
+      </script>
+      <style type="text/css">
+         .bgStyle{
+         background : url("rsz_2fullimg2.jpg");
+         max-width: 100%;
+         overflow: hidden;
+         height: auto; /* use height: 800px; for responsive*/
+         }
+         input[type="text"]
+         {
+         background: rgba(0, 0, 0, 0.5);
+         border: 1px solid black;
+         outline: none;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="bgStyle container">
+         <div align="center">
+            <p class="text-uppercase" style="box-shadow: 0 0 10px black; letter-spacing: 2px; width: 400px; padding: 3px; margin: 15px; text-align: center; color: white; font-size: 6vh; background-color: red">Age as a Dog</p>
+            
+         </div>
+         <div class="container">
+            <h5 style="color: white;border-bottom: 1px solid white" class="pb-2">Do you know ?</h5>
+            <div class="container p-3" style="background-color: #eee;border-radius: 5px">
+               <i style="color: black" class="fa fa-quote-left"></i>
+               <p style="color: black"><span style="color: black;"><em>Dogs mature at a faster rate than human beings. We often say a dog’s age can be calculated in “dog years” to account for their growth compared to a human of the same age. In some ways we could say, time moves quickly for dogs — 8 years in a human’s life equates to 45 years in a dog’s life. How old would you be if you were a dog?</em></p>
+            </div>
+         </div>
+         <div class="mt-5 container" style="">
+            <div class="row">
+               <div align="center" class="col-md-4">
+                  <input class="form-control mt-5" type="text" name="" placeholder="name" id="nameInpt">
+                  <input class="form-control mt-5 mb-5" type="text" placeholder="age" id="ageInpt">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <a href="#" style="text-decoration: none;" onclick="calAge()">
+                              <p style="box-shadow: 0 0 15px black; background-color: red; font-family: cursive; color: white; " class="text-uppercase">Begin fun <i style="color: white" class="fa     fa-laugh-beam p-2"></i></p>
+                           </a>
+                        </div>
+                        <div class="col-md-6">
+                           <a href="#" style="text-decoration: none;" onclick="resetBtn()">
+                              <p style="box-shadow: 0 0 15px black; background-color: red; font-family: cursive; color: white; " class="text-uppercase">Reset<i style="color: white" class="fa fa-dog p-2"></i></p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md"></div>
+               <div class="col-md-6">
+                  <div style="text-align: center;">
+                     <p style="background-color: #eee;border-radius: 5px" class="p-2" id="para1"></p>
+                     <div >
+                        <div class="text-muted form-control" id="res" style="height: 220px;font-size: 72px">
+                        	<h2>Let's live</h2>
+                        	<i style="font-size: 40px;color: red;font-family: 'Holtwood One SC', serif;">as a DOG! <i style="color: red" class="fa fa-dog"></i></i>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <footer class="container mt-5 p-5" style="border-top: 1px solid #C0C0C0">
+            <p align="center" class="text-muted text-uppercase" style="font-size: 11px; font-family: Montserrat">Copyright © 2020 Ced Clothing Co. Ltd. - Design: <span style="color: #dc3545">YamZaidi</span></p>
+         </footer>
+      </div>
+   </body>
+</html>
+
